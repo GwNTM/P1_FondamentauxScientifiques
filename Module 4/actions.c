@@ -20,14 +20,10 @@ void getAction(int action, File *file){
                 printDecroissant(file,actuel);
                 break;
             case 4:
-                printf("A quel moment voulez vous obtenir la valeur du pouls ?");
-                scanf("%d",&temps);
-                printPoulsTemps(temps,actuel);
+                printPoulsTemps(actuel);
                 break;
             case 5:
-                printf("Indiquez la plage de temps voulu !");
-                scanf("%d %d",&min,&max);
-                printMoyenne(file,min,max,actuel);
+                printMoyenne(file,actuel);
                 break;
             case 6:
                 printNbLigne(actuel);
@@ -44,7 +40,6 @@ void getAction(int action, File *file){
 
 void printOrdre(Element *actuel){
     while(actuel != NULL){
-
         printf("Le pouls est de %d a %d secondes\n",actuel->Mesure.pouls,actuel->Mesure.temps);
         actuel = actuel->suivant;
 
@@ -101,7 +96,10 @@ void printDecroissant(File *file,Element *actuel){
     }
 }
 
-void printPoulsTemps(int temps,Element *actuel){
+void printPoulsTemps(Element *actuel){
+    int temps;
+    printf("A quel moment voulez vous obtenir la valeur du pouls ?");
+    scanf("%d",&temps);
 
     while(actuel != NULL && actuel->Mesure.temps != temps){
         actuel = actuel->suivant;
@@ -114,9 +112,12 @@ void printPoulsTemps(int temps,Element *actuel){
     }
 }
 
-void printMoyenne(File *file,int min, int max,Element *actuel){
+void printMoyenne(File *file,Element *actuel){
 
-    int size = 0, totalPouls = 0, poulsMoyen = 0,temp = 0;
+    int size = 0, totalPouls = 0, poulsMoyen = 0,temp = 0, min,max;
+
+    printf("Indiquez la plage de temps voulu !");
+    scanf("%d %d",&min,&max);
 
     Element *elem = NULL;
 
