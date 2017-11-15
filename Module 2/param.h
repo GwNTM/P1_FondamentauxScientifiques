@@ -1,0 +1,1 @@
+int parametre(){return 4;}
