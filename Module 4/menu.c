@@ -6,7 +6,7 @@
 void printMenu(){
     printf("+-----------------------------------------------------------------------------------+\n");
     printf("|                                        MENU                                       |\n");
-    printf("|-----------------------------------------------------------------------------------|\n");
+    printf("+-----------------------------------------------------------------------------------+\n");
     printf("|1 - Afficher les donnees dans l'ordre du fichier .csv                              |\n");
     printf("|2 - Afficher les donnees en ordre croissant (selon le temps, selon le pouls)       |\n");
     printf("|3 - Afficher les donnees en ordre decroissant (selon le temps, selon le pouls)     |\n");
