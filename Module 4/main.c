@@ -11,8 +11,12 @@ int main()
 
     readDonnees(file);
 
-    printMenu();
-    getAction(choseAction(), file);
+    int action = 0;
+    do{
+        printMenu();
+        action = choseAction();
+        getAction(action, file);
+    }while(action != 0);
 
     return 0;
 }
