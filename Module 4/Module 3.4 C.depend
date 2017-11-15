@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1510732110 source:c:\users\keker\desktop\cours\projets\projet 1 - cardio-fréquencemètre\module 3.4 c\actions.c
+	<stdio.h>
+	"menu.h"
+	"donnees.h"
+	"actions.h"
+
+1510573539 c:\users\keker\desktop\cours\projets\projet 1 - cardio-fréquencemètre\module 3.4 c\menu.h
+
+1510665497 c:\users\keker\desktop\cours\projets\projet 1 - cardio-fréquencemètre\module 3.4 c\donnees.h
+
+1510562296 c:\users\keker\desktop\cours\projets\projet 1 - cardio-fréquencemètre\module 3.4 c\actions.h
+
+1510732116 source:c:\users\keker\desktop\cours\projets\projet 1 - cardio-fréquencemètre\module 3.4 c\donnees.c
+	<stdio.h>
+	<stdlib.h>
+	"menu.h"
+	"donnees.h"
+	"actions.h"
+
+1510731917 source:c:\users\keker\desktop\cours\projets\projet 1 - cardio-fréquencemètre\module 3.4 c\main.c
+	<stdio.h>
+	<stdlib.h>
+	"menu.h"
+	"donnees.h"
+	"actions.h"
+
+1510732106 source:c:\users\keker\desktop\cours\projets\projet 1 - cardio-fréquencemètre\module 3.4 c\menu.c
+	<stdio.h>
+	"menu.h"
+	"donnees.h"
+	"actions.h"
+
