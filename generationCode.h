@@ -1,0 +1,2 @@
+
+void choix(int Num);
