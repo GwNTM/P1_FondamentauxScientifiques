@@ -6,17 +6,17 @@
 
 int main()
 {
+    int action = -1;
     File *file = NULL;
     file = initialisation();
 
     readDonnees(file);
 
-    int action = 0;
-    do{
+    while(action != 0){
         printMenu();
         action = choseAction();
         getAction(action, file);
-    }while(action != 0);
+    }
 
     return 0;
 }

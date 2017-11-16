@@ -16,6 +16,6 @@ struct File
     Element *premier;
 };
 
-void readDonnees(File *file);
+void readDonnees();
 File *initialisation();
-void enfilage(File *File, mesure mesure);
+void insertion(File *File, mesure mesure);

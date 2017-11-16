@@ -27,7 +27,7 @@ void readDonnees(File *file){
                 break;
             }
 
-            Mesure.temps = atoi(motFichier);
+            Mesure.pouls = atoi(motFichier);
             rangLigne = -1;
 
             while(caractereActuel != '\n'){
@@ -36,7 +36,7 @@ void readDonnees(File *file){
                 motFichier[rangLigne] = caractereActuel;
             }
 
-            Mesure.pouls = atoi(motFichier);
+            Mesure.temps = atoi(motFichier);
             rangLigne = -1;
 
             enfilage(file, Mesure);

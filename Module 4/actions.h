@@ -1,10 +1,1 @@
 void getAction();
-void printOrdre(Element *actuel);
-void printCroissant(File *file, Element *actuel);
-void printDecroissant(File *file, Element *actuel);
-void printPoulsTemps(Element *actuel);
-void printMoyenne(File *file, Element *actuel);
-void printNbLigne(Element *actuel);
-void printMinMax(File *file, Element *actuel);
-void tri_bulle_croissant(int size, mesure tab[]);
-void tri_bulle_decroissant(int size, mesure tab[]);

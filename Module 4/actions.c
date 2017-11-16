@@ -5,31 +5,39 @@
 
 void getAction(int action, File *file){
     int temps = 0, min = 0,max = 0;
-    Element *actuel = file->premier;
-    actuel = actuel->suivant;
-
     if(file != NULL){
         switch (action){
             case 1:
-                printOrdre(actuel);
+                printOrdre(file);
                 break;
             case 2:
-                printCroissant(file,actuel);
+                printInverse(file);
                 break;
             case 3:
-                printDecroissant(file,actuel);
+                printCroissant(file);
                 break;
+
             case 4:
-                printPoulsTemps(actuel);
+                printDecroissant(file);
                 break;
+
             case 5:
-                printMoyenne(file,actuel);
+                printf("Pour quel instant voulez vous obtenir la valeur du pouls ?");
+                scanf("%d",&temps);
+                printPoulsTemps(file,temps);
                 break;
+
             case 6:
-                printNbLigne(actuel);
+                printf("Indiquez la plage de temps voulu !");
+                scanf("%d %d",&min,&max);
+                printMoyenne(file,min,max);
                 break;
+
             case 7:
-                printMinMax(file,actuel);
+                printNbLigne(file);
+                break;
+            case 8:
+                printMinMax(file);
                 break;
             default:
                 break;
@@ -38,113 +46,98 @@ void getAction(int action, File *file){
     }
 }
 
-void printOrdre(Element *actuel){
+void printOrdre(File *file){
+    Element *actuel = file->premier;
+    actuel = actuel->suivant;
     while(actuel != NULL){
-        printf("Le pouls est de %d a %d secondes\n",actuel->Mesure.pouls,actuel->Mesure.temps);
+        printf("Le pouls est de %d a l'instant %d\n",actuel->Mesure.pouls,actuel->Mesure.temps);
         actuel = actuel->suivant;
-
     }
 }
 
-void printCroissant(File *file,Element *actuel){
-    int size = 0,i;
-
+void printInverse(File *file){
+    int size = 0;
+    Element *actuel = file->premier;
+    actuel = actuel->suivant;
     while(actuel != NULL){
         size ++;
         actuel = actuel->suivant;
     }
-
     mesure tab[size];
-
+    int i;
     actuel = file->premier;
     actuel = actuel->suivant;
-
     for(i = 0;i<size;i++){
         tab[i] = actuel->Mesure;
         actuel = actuel->suivant;
     }
-
-    tri_bulle_croissant(size, tab);
-
+    tri_bulle_decroissant_temps(size, tab);
     for(i = 0;i<size;i++){
-        printf("Le pouls est de %d a %d secondes\n",tab[i].pouls,tab[i].temps);
+        printf("Le pouls est de %d a l'instant %d\n",tab[i].pouls,tab[i].temps);
     }
 }
 
-void printDecroissant(File *file,Element *actuel){
-    int size = 0,i;
-
+void printCroissant(File *file){
+    int size = 0;
+    Element *actuel = file->premier;
+    actuel = actuel->suivant;
     while(actuel != NULL){
         size ++;
         actuel = actuel->suivant;
     }
-
     mesure tab[size];
-
+    int i;
     actuel = file->premier;
     actuel = actuel->suivant;
-
     for(i = 0;i<size;i++){
         tab[i] = actuel->Mesure;
         actuel = actuel->suivant;
     }
-
-    tri_bulle_decroissant(size, tab);
-
+    tri_bulle_croissant_pouls(size, tab);
     for(i = 0;i<size;i++){
-        printf("Le pouls est de %d avec a %d secondes \n",tab[i].pouls,tab[i].temps);
+        printf("Le pouls est de %d a l'instant %d\n",tab[i].pouls,tab[i].temps);
     }
 }
 
-void printPoulsTemps(Element *actuel){
-    int temps;
-    printf("A quel moment voulez vous obtenir la valeur du pouls ?");
-    scanf("%d",&temps);
-
-    while(actuel != NULL && actuel->Mesure.temps != temps){
-        actuel = actuel->suivant;
-    }
-
-    if(actuel == NULL){
-        printf("Erreur, ce temps n'a pas été enregistré !\n");
-    }else{
-        printf("Le pouls est de %d a %d secondes\n",actuel->Mesure.pouls,temps);
-    }
-}
-
-void printMoyenne(File *file,Element *actuel){
-
-    int size = 0, totalPouls = 0, poulsMoyen = 0,temp = 0, min,max;
-
-    printf("Indiquez la plage de temps voulu !");
-    scanf("%d %d",&min,&max);
-
-    Element *elem = NULL;
-
-    if(min > max){
-        temp = min;
-        min = max;
-        max = temp;
-    }
-
-    if(min <= actuel->Mesure.temps)min = actuel->Mesure.temps;
-
+void printDecroissant(File *file){
+    int size = 0;
+    Element *actuel = file->premier;
+    actuel = actuel->suivant;
     while(actuel != NULL){
-        elem = actuel;
+        size ++;
         actuel = actuel->suivant;
     }
-
-    if(max >= elem->Mesure.temps)max = elem->Mesure.temps;
-
+    mesure tab[size];
+    int i;
     actuel = file->premier;
+    actuel = actuel->suivant;
+    for(i = 0;i<size;i++){
+        tab[i] = actuel->Mesure;
+        actuel = actuel->suivant;
+    }
+    tri_bulle_decroissant_pouls(size, tab);
+    for(i = 0;i<size;i++){
+        printf("Le pouls est de %d a l'instant %d\n",tab[i].pouls,tab[i].temps);
+    }
+}
+
+void printPoulsTemps(File *file, int temps){
+    int pouls = recherchePouls(temps, file);
+
+    if(pouls != -1){
+        printf("Le pouls est de %d a l'instant %d\n",pouls,temps);
+    }
+}
+
+void printMoyenne(File *file, int min, int max){
+    int size = 0, totalPouls = 0, poulsMoyen = 0;
+    Element *actuel = file->premier;
     actuel = actuel->suivant;
 
     while(actuel->Mesure.temps < min && actuel != NULL){
         actuel = actuel->suivant;
     }
-
     if(actuel != NULL){
-
         while(actuel->Mesure.temps < max && actuel != NULL){
             totalPouls+=actuel->Mesure.pouls;
             size++;
@@ -152,41 +145,46 @@ void printMoyenne(File *file,Element *actuel){
         }
 
         if(actuel != NULL){
-
             totalPouls+=actuel->Mesure.pouls;
             size++;
             actuel = actuel->suivant;
-            poulsMoyen = totalPouls/size;
-            printf("Le pouls moyen entre %d et %d est de %d\n",min,max,poulsMoyen);
 
-        }else{
-            printf("Erreur, ce temps n'a pas été enregistré !\n");
+            poulsMoyen = totalPouls/size;
+            printf("Le pouls moyen est de %d\n", poulsMoyen);
         }
-    }else{
-        printf("Erreur, ce temps n'a pas été enregistré !\n");
     }
 }
 
-void printNbLigne(Element *actuel){
+void printNbLigne(File *file){
     int size = 0;
-
+    Element *actuel = file->premier;
+    actuel = actuel->suivant;
     while(actuel != NULL){
         size ++;
         actuel = actuel->suivant;
     }
-
     printf("Il y a %d valeur enregistre pour le moment !\n",size);
 }
 
-void printMinMax(File *file,Element *actuel){
-    int min = 500, max = 0;
+void printMinMax(File *file){
+    int sizeMin = 1, sizeMax = 1,min = 500,max = 0, rngMin = 0, rngMax = 0,i;
+    mesure minMesure[sizeMin], maxMesure[sizeMax];
+
+    Element *actuel = file->premier;
+    actuel = actuel->suivant;
 
     while(actuel != NULL){
         if(min > actuel->Mesure.pouls){
+            sizeMin = 1;
             min = actuel->Mesure.pouls;
+        }else if(min == actuel->Mesure.pouls){
+            sizeMin++;
         }
         if(max < actuel->Mesure.pouls){
+            sizeMax = 1;
             max = actuel->Mesure.pouls;
+        }else if(max == actuel->Mesure.pouls){
+            sizeMax++;
         }
         actuel = actuel->suivant;
     }
@@ -194,33 +192,47 @@ void printMinMax(File *file,Element *actuel){
     actuel = file->premier;
     actuel = actuel->suivant;
 
-    while(actuel->Mesure.pouls != min && actuel != NULL){
+    while(actuel != NULL){
+        if(actuel->Mesure.pouls == min){
+            minMesure[rngMin] = actuel->Mesure;
+            rngMin++;
+        }
+        if(actuel->Mesure.pouls == max){
+            maxMesure[rngMax] = actuel->Mesure;
+            rngMax++;
+        }
         actuel = actuel->suivant;
     }
 
-    if(actuel != NULL){
+    for(i = 0;i < sizeMin;i++){
+        printf("Un pouls minimum est %d a l'instant %d\n",minMesure[i].pouls,minMesure[i].temps);
+    }
 
-        mesure minMesure = actuel->Mesure ;
-
-        actuel = file->premier;
-        actuel = actuel->suivant;
-
-        while(actuel->Mesure.pouls != max && actuel!= NULL){
-            actuel = actuel->suivant;
-        }
-
-        if(actuel != NULL){
-            mesure maxMesure = actuel->Mesure ;
-
-            printf("Le pouls minimum est %d a %d secondes et le pouls maximum est %d a %d secondes\n",minMesure.pouls,minMesure.temps,maxMesure.pouls,maxMesure.temps);
-        }
+    for(i = 0;i < sizeMax;i++){
+        printf("Un pouls maximum est %d a l'instant %d\n",maxMesure[i].pouls,maxMesure[i].temps);
     }
 }
 
-void tri_bulle_croissant(int size, mesure tab[]){
-    int change,i;
+int recherchePouls(int temps, File *file){
+    Element *actuel = file->premier;
+    actuel = actuel->suivant;
+    Element *prec = file->premier;
+    while(actuel->Mesure.temps <= temps && actuel != NULL){
+        prec = prec->suivant;
+        actuel = actuel->suivant;
+    }
+    if(actuel == NULL){
+        return -1;
+    }else{
+        return prec->Mesure.pouls;
+    }
+}
+
+void tri_bulle_croissant_pouls(int size, mesure tab[]){
+    int change;
     mesure temp;
     do{
+        int i;
         change = 0;
         for(i = 0;i<size-1;i++){
             if(tab[i].pouls > tab[i+1].pouls){
@@ -233,7 +245,7 @@ void tri_bulle_croissant(int size, mesure tab[]){
     }while(change == 1);
 }
 
-void tri_bulle_decroissant(int size, mesure tab[]){
+void tri_bulle_decroissant_pouls(int size, mesure tab[]){
     int change;
     mesure temp;
     do{
@@ -241,6 +253,23 @@ void tri_bulle_decroissant(int size, mesure tab[]){
         change = 0;
         for(i = 0;i<size-1;i++){
             if(tab[i].pouls < tab[i+1].pouls){
+                temp = tab[i];
+                tab[i] = tab[i+1];
+                tab[i+1] = temp;
+                change = 1;
+            }
+        }
+    }while(change == 1);
+}
+
+void tri_bulle_decroissant_temps(int size, mesure tab[]){
+    int change;
+    mesure temp;
+    do{
+        int i;
+        change = 0;
+        for(i = 0;i<size-1;i++){
+            if(tab[i].temps < tab[i+1].temps){
                 temp = tab[i];
                 tab[i] = tab[i+1];
                 tab[i+1] = temp;

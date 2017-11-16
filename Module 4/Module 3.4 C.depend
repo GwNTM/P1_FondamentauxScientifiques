@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1510732110 source:c:\users\keker\desktop\cours\projets\projet 1 - cardio-fréquencemètre\module 3.4 c\actions.c
+1510827640 source:c:\users\keker\desktop\cours\projets\projet 1 - cardio-fréquencemètre\module 3.4 c\actions.c
 	<stdio.h>
 	"menu.h"
 	"donnees.h"
@@ -18,46 +18,14 @@
 	"donnees.h"
 	"actions.h"
 
-1510731917 source:c:\users\keker\desktop\cours\projets\projet 1 - cardio-fréquencemètre\module 3.4 c\main.c
+1510816389 source:c:\users\keker\desktop\cours\projets\projet 1 - cardio-fréquencemètre\module 3.4 c\main.c
 	<stdio.h>
 	<stdlib.h>
 	"menu.h"
 	"donnees.h"
 	"actions.h"
 
-1510732106 source:c:\users\keker\desktop\cours\projets\projet 1 - cardio-fréquencemètre\module 3.4 c\menu.c
-	<stdio.h>
-	"menu.h"
-	"donnees.h"
-	"actions.h"
-
-1510750422 source:c:\users\keker\desktop\cours\projets\projet 1 - cardio-fréquencemètre\p1_fondamentauxscientifiques\module 4\actions.c
-	<stdio.h>
-	"menu.h"
-	"donnees.h"
-	"actions.h"
-
-1510573539 c:\users\keker\desktop\cours\projets\projet 1 - cardio-fréquencemètre\p1_fondamentauxscientifiques\module 4\menu.h
-
-1510739261 c:\users\keker\desktop\cours\projets\projet 1 - cardio-fréquencemètre\p1_fondamentauxscientifiques\module 4\donnees.h
-
-1510750400 c:\users\keker\desktop\cours\projets\projet 1 - cardio-fréquencemètre\p1_fondamentauxscientifiques\module 4\actions.h
-
-1510733784 source:c:\users\keker\desktop\cours\projets\projet 1 - cardio-fréquencemètre\p1_fondamentauxscientifiques\module 4\donnees.c
-	<stdio.h>
-	<stdlib.h>
-	"menu.h"
-	"donnees.h"
-	"actions.h"
-
-1510733409 source:c:\users\keker\desktop\cours\projets\projet 1 - cardio-fréquencemètre\p1_fondamentauxscientifiques\module 4\main.c
-	<stdio.h>
-	<stdlib.h>
-	"menu.h"
-	"donnees.h"
-	"actions.h"
-
-1510733738 source:c:\users\keker\desktop\cours\projets\projet 1 - cardio-fréquencemètre\p1_fondamentauxscientifiques\module 4\menu.c
+1510831431 source:c:\users\keker\desktop\cours\projets\projet 1 - cardio-fréquencemètre\module 3.4 c\menu.c
 	<stdio.h>
 	"menu.h"
 	"donnees.h"
