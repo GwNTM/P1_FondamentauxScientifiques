@@ -130,8 +130,36 @@ void printPoulsTemps(File *file, int temps){
 }
 
 void printMoyenne(File *file, int min, int max){
-    int size = 0, totalPouls = 0, poulsMoyen = 0;
+    int size = 0, totalPouls = 0, poulsMoyen = 0, temp;
     Element *actuel = file->premier;
+    actuel = actuel->suivant;
+    Element *prec = file->premier;
+
+    if(min > max){
+        min = temp;
+        min = max;
+        max = temp;
+    }
+
+    while(actuel != NULL){
+        if(actuel->Mesure.temps < max){
+            prec = prec->suivant;
+            actuel = actuel->suivant;
+        }else{
+            break;
+        }
+    }
+
+    if(actuel == NULL){
+        max = prec->Mesure.temps;
+    }
+
+    actuel = file->premier;
+    actuel = actuel->suivant;
+
+    if(min < actuel->Mesure.temps)min = actuel->Mesure.temps;
+
+    actuel = file->premier;
     actuel = actuel->suivant;
 
     while(actuel->Mesure.temps < min && actuel != NULL){
@@ -143,11 +171,9 @@ void printMoyenne(File *file, int min, int max){
             size++;
             actuel = actuel->suivant;
         }
-
         if(actuel != NULL){
             totalPouls+=actuel->Mesure.pouls;
             size++;
-            actuel = actuel->suivant;
 
             poulsMoyen = totalPouls/size;
             printf("Le pouls moyen est de %d\n", poulsMoyen);
