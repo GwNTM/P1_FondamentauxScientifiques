@@ -1,7 +1,5 @@
 #include <stdio.h>
 #include "menu.h"
-#include "donnees.h"
-#include "actions.h"
 
 void printMenu(){
     printf("     ___________________________________________________________________________________ \n");

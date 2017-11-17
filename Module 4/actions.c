@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "menu.h"
 #include "donnees.h"
 #include "actions.h"
 
@@ -22,7 +21,7 @@ void getAction(int action, File *file){
                 break;
 
             case 5:
-                printf("Pour quel instant voulez vous obtenir la valeur du pouls ?");
+                printf("A quel moment voulez vous obtenir la valeur du pouls ?");
                 scanf("%d",&temps);
                 printPoulsTemps(file,temps);
                 break;
@@ -50,7 +49,7 @@ void printOrdre(File *file){
     Element *actuel = file->premier;
     actuel = actuel->suivant;
     while(actuel != NULL){
-        printf("Le pouls est de %d a l'instant %d\n",actuel->Mesure.pouls,actuel->Mesure.temps);
+        printf("Le pouls est de %d bpm a %d ms\n",actuel->Mesure.pouls,actuel->Mesure.temps);
         actuel = actuel->suivant;
     }
 }
@@ -73,7 +72,7 @@ void printInverse(File *file){
     }
     tri_bulle_decroissant_temps(size, tab);
     for(i = 0;i<size;i++){
-        printf("Le pouls est de %d a l'instant %d\n",tab[i].pouls,tab[i].temps);
+        printf("Le pouls est de %d bpm a %d ms\n",tab[i].pouls,tab[i].temps);
     }
 }
 
@@ -95,7 +94,7 @@ void printCroissant(File *file){
     }
     tri_bulle_croissant_pouls(size, tab);
     for(i = 0;i<size;i++){
-        printf("Le pouls est de %d a l'instant %d\n",tab[i].pouls,tab[i].temps);
+        printf("Le pouls est de %d bpm a %d ms\n",tab[i].pouls,tab[i].temps);
     }
 }
 
@@ -117,7 +116,7 @@ void printDecroissant(File *file){
     }
     tri_bulle_decroissant_pouls(size, tab);
     for(i = 0;i<size;i++){
-        printf("Le pouls est de %d a l'instant %d\n",tab[i].pouls,tab[i].temps);
+        printf("Le pouls est de %d bpm a %d ms\n",tab[i].pouls,tab[i].temps);
     }
 }
 
@@ -125,7 +124,7 @@ void printPoulsTemps(File *file, int temps){
     int pouls = recherchePouls(temps, file);
 
     if(pouls != -1){
-        printf("Le pouls est de %d a l'instant %d\n",pouls,temps);
+        printf("Le pouls est de %d bpm a %d ms\n",pouls,temps);
     }
 }
 
@@ -176,7 +175,7 @@ void printMoyenne(File *file, int min, int max){
             size++;
 
             poulsMoyen = totalPouls/size;
-            printf("Le pouls moyen est de %d\n", poulsMoyen);
+            printf("Le pouls moyen est de %d bpm\n", poulsMoyen);
         }
     }
 }
@@ -231,11 +230,11 @@ void printMinMax(File *file){
     }
 
     for(i = 0;i < sizeMin;i++){
-        printf("Un pouls minimum est %d a l'instant %d\n",minMesure[i].pouls,minMesure[i].temps);
+        printf("Il y a un pouls minimum de %d bpm a %d ms\n",minMesure[i].pouls,minMesure[i].temps);
     }
 
     for(i = 0;i < sizeMax;i++){
-        printf("Un pouls maximum est %d a l'instant %d\n",maxMesure[i].pouls,maxMesure[i].temps);
+        printf("Il y a un pouls maximum de %d bpm a %d ms\n",maxMesure[i].pouls,maxMesure[i].temps);
     }
 }
 
@@ -304,4 +303,3 @@ void tri_bulle_decroissant_temps(int size, mesure tab[]){
         }
     }while(change == 1);
 }
-

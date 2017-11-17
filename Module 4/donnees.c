@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "menu.h"
 #include "donnees.h"
-#include "actions.h"
 
 void readDonnees(File *file){
     struct mesure Mesure;

@@ -31,7 +31,7 @@
 	"donnees.h"
 	"actions.h"
 
-1510854442 source:c:\users\keker\desktop\cours\projets\projet 1 - cardio-fréquencemètre\p1_fondamentauxscientifiques\module 4\actions.c
+1510855545 source:c:\users\keker\desktop\cours\projets\projet 1 - cardio-fréquencemètre\p1_fondamentauxscientifiques\module 4\actions.c
 	<stdio.h>
 	"menu.h"
 	"donnees.h"
@@ -43,20 +43,16 @@
 
 1510562296 c:\users\keker\desktop\cours\projets\projet 1 - cardio-fréquencemètre\p1_fondamentauxscientifiques\module 4\actions.h
 
-1510732116 source:c:\users\keker\desktop\cours\projets\projet 1 - cardio-fréquencemètre\p1_fondamentauxscientifiques\module 4\donnees.c
+1510905351 source:c:\users\keker\desktop\cours\projets\projet 1 - cardio-fréquencemètre\p1_fondamentauxscientifiques\module 4\donnees.c
 	<stdio.h>
 	<stdlib.h>
-	"menu.h"
 	"donnees.h"
-	"actions.h"
 
-1510838823 source:c:\users\keker\desktop\cours\projets\projet 1 - cardio-fréquencemètre\p1_fondamentauxscientifiques\module 4\menu.c
+1510905300 source:c:\users\keker\desktop\cours\projets\projet 1 - cardio-fréquencemètre\p1_fondamentauxscientifiques\module 4\menu.c
 	<stdio.h>
 	"menu.h"
-	"donnees.h"
-	"actions.h"
 
-1510833238 source:c:\users\keker\desktop\cours\projets\projet 1 - cardio-fréquencemètre\p1_fondamentauxscientifiques\module 4\main.c
+1510905312 source:c:\users\keker\desktop\cours\projets\projet 1 - cardio-fréquencemètre\p1_fondamentauxscientifiques\module 4\main.c
 	<stdio.h>
 	<stdlib.h>
 	"menu.h"
