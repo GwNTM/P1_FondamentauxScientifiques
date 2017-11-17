@@ -1,2 +1,1 @@
-
 void choix(int Num);

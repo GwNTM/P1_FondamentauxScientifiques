@@ -1,1 +1,1 @@
-int parametre(){return 4;}
+int parametre(){return 2;}
