@@ -1,0 +1,25 @@
+void choix();
+void allled();
+void chenilleune();
+void unesurdeux();
+void unesurtrois();
+void unesurquatre();
+void unesurcinq(();
+void unesursix();
+void unesursept();
+void unesurhuit();
+void unesurneuf();
+void unesurdix();
+void escargot();
+void balayagehorizontal();
+void spirale();
+void chargement();
+void chenilletrois();
+void chenillequatre();
+void chenilledeux();
+void chenillecinq();
+void chenillesix();
+void chenillesept();
+void balayagevertical();
+void hasard();
+
