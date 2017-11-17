@@ -1,0 +1,65 @@
+# depslib dependency file v1.0
+1510827640 source:c:\users\keker\desktop\cours\projets\projet 1 - cardio-fréquencemètre\module 3.4 c\actions.c
+	<stdio.h>
+	"menu.h"
+	"donnees.h"
+	"actions.h"
+
+1510573539 c:\users\keker\desktop\cours\projets\projet 1 - cardio-fréquencemètre\module 3.4 c\menu.h
+
+1510665497 c:\users\keker\desktop\cours\projets\projet 1 - cardio-fréquencemètre\module 3.4 c\donnees.h
+
+1510562296 c:\users\keker\desktop\cours\projets\projet 1 - cardio-fréquencemètre\module 3.4 c\actions.h
+
+1510732116 source:c:\users\keker\desktop\cours\projets\projet 1 - cardio-fréquencemètre\module 3.4 c\donnees.c
+	<stdio.h>
+	<stdlib.h>
+	"menu.h"
+	"donnees.h"
+	"actions.h"
+
+1510816389 source:c:\users\keker\desktop\cours\projets\projet 1 - cardio-fréquencemètre\module 3.4 c\main.c
+	<stdio.h>
+	<stdlib.h>
+	"menu.h"
+	"donnees.h"
+	"actions.h"
+
+1510831431 source:c:\users\keker\desktop\cours\projets\projet 1 - cardio-fréquencemètre\module 3.4 c\menu.c
+	<stdio.h>
+	"menu.h"
+	"donnees.h"
+	"actions.h"
+
+1510854442 source:c:\users\keker\desktop\cours\projets\projet 1 - cardio-fréquencemètre\p1_fondamentauxscientifiques\module 4\actions.c
+	<stdio.h>
+	"menu.h"
+	"donnees.h"
+	"actions.h"
+
+1510573539 c:\users\keker\desktop\cours\projets\projet 1 - cardio-fréquencemètre\p1_fondamentauxscientifiques\module 4\menu.h
+
+1510665497 c:\users\keker\desktop\cours\projets\projet 1 - cardio-fréquencemètre\p1_fondamentauxscientifiques\module 4\donnees.h
+
+1510562296 c:\users\keker\desktop\cours\projets\projet 1 - cardio-fréquencemètre\p1_fondamentauxscientifiques\module 4\actions.h
+
+1510732116 source:c:\users\keker\desktop\cours\projets\projet 1 - cardio-fréquencemètre\p1_fondamentauxscientifiques\module 4\donnees.c
+	<stdio.h>
+	<stdlib.h>
+	"menu.h"
+	"donnees.h"
+	"actions.h"
+
+1510838823 source:c:\users\keker\desktop\cours\projets\projet 1 - cardio-fréquencemètre\p1_fondamentauxscientifiques\module 4\menu.c
+	<stdio.h>
+	"menu.h"
+	"donnees.h"
+	"actions.h"
+
+1510833238 source:c:\users\keker\desktop\cours\projets\projet 1 - cardio-fréquencemètre\p1_fondamentauxscientifiques\module 4\main.c
+	<stdio.h>
+	<stdlib.h>
+	"menu.h"
+	"donnees.h"
+	"actions.h"
+
